@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.azabdi</groupId>
+    <artifactId>asyncapiFromJava</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.asyncapi</groupId>
+                <artifactId>asyncapi-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <classNames>de.sidion.aim.asyncapi.StreetlightsAsyncAPI</classNames>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.asyncapi</groupId>
+            <artifactId>asyncapi-core</artifactId>
+            <version>1.0.0-EAP-1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asyncapi</groupId>
+            <artifactId>asyncapi-plugin-core</artifactId>
+            <version>1.0.0-EAP-1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asyncapi</groupId>
+            <artifactId>asyncapi-maven-plugin</artifactId>
+            <version>1.0.0-EAP-1</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
